@@ -41,11 +41,12 @@ export type TesteDivisao = {
 }
 
 export const TESTES_DIVISAO: TesteDivisao[] = [
-  { nome: "Teste 1 · Headline", inicio: "2026-10-26", variacoes: { "/v1": 34, "/v2": 33, "/v3": 33 } },
+  // General Jubilados: mesmas promessas da General (Teste 1 do Emi, A=/v1, B=/v2, C=/v3, D=/v4).
+  { nome: "Teste 1 · Headline oficial", inicio: "2026-10-26", variacoes: { "/v1": 25, "/v2": 25, "/v3": 25, "/v4": 25 } },
 ]
 
 /** Variações que existem neste projeto (cada uma com a sua versão -intl). Página nova (/v4…) entra aqui. */
-export const VARIACOES_EXISTENTES = ["/", "/v1", "/v2", "/v3"]
+export const VARIACOES_EXISTENTES = ["/", "/v1", "/v2", "/v3", "/v4"]
 
 export const COOKIE_DIVISAO = "tde_div"
 export const DURACAO_COOKIE = 60 * 60 * 24 * 30
