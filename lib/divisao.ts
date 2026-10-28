@@ -43,6 +43,8 @@ export type TesteDivisao = {
 export const TESTES_DIVISAO: TesteDivisao[] = [
   // General Jubilados: mesmas promessas da General (Teste 1 do Emi, A=/v1, B=/v2, C=/v3, D=/v4).
   { nome: "Teste 1 · Headline oficial", inicio: "2026-10-26", variacoes: { "/v1": 25, "/v2": 25, "/v3": 25, "/v4": 25 } },
+  // 28/10/2026 (Emi): General/Jubilados — Argentina e Uruguai: /v1 fixa (vencedora)
+  { nome: "Teste 2 · Vencedora fixa", inicio: "2026-10-28", variacoes: { "/v1": 100 } },
 ]
 
 /** Variações que existem neste projeto (cada uma com a sua versão -intl). Página nova (/v4…) entra aqui. */
