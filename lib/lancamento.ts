@@ -11,9 +11,27 @@
  *   na Meta e o lead cai no lançamento "teste-paginas" do painel (não suja os reais).
  */
 export const PAINEL_URL = (process.env.NEXT_PUBLIC_PAINEL_URL || "https://painel.traderdelite.net").replace(/\/+$/, "")
-export const LINK_GRUPO_GERAL = process.env.NEXT_PUBLIC_LINK_GRUPO_GERAL || "https://links.traderdelite.net/geral"
+/**
+ * 27/11/2026: links DIRETOS dos grupos, sem redirecionador e sem variável da Vercel (decisão Martín/Lucas:
+ * nada automático que a Meta possa ver como anormal). Botão principal: link A ou B, 50% cada (a mesma
+ * pessoa recebe sempre o mesmo na sessão). Trocar os links aqui quando um grupo encher.
+ */
+export const LINKS_GRUPO_GERAL = ["https://chat.whatsapp.com/BP8AnJLFO28Iwsdhja9VTG", "https://chat.whatsapp.com/CGezjbE9e5DJUeYAJAVvXb"]
+export const LINK_GRUPO_GERAL = LINKS_GRUPO_GERAL[0]
+export function linkGrupoGeral(): string {
+  const chave = "tde_grupo_geral"
+  try {
+    const salvo = sessionStorage.getItem(chave)
+    if (salvo && LINKS_GRUPO_GERAL.includes(salvo)) return salvo
+  } catch {}
+  const link = LINKS_GRUPO_GERAL[Math.random() < 0.5 ? 0 : 1]
+  try {
+    sessionStorage.setItem(chave, link)
+  } catch {}
+  return link
+}
 /** Botão "Unirme al grupo" de Jubilados e General-Jubilados (20/11/2026): funil próprio no redirecionador (campanha Jubilados no Sendflow, 3 grupos ao mesmo tempo). */
-export const LINK_GRUPO_JUBILADOS = process.env.NEXT_PUBLIC_LINK_GRUPO_JUBILADOS || "https://links.traderdelite.net/jubilados"
+export const LINK_GRUPO_JUBILADOS = LINK_GRUPO_GERAL // 27/11/2026: Jubilados usa os links do General
 export const LANCAMENTO_TESTE = "teste-paginas"
 /** Esta é a página General Jubilados (cópia da General com domínio próprio). O painel separa as métricas por site. */
 export const SITE = "genjub"
@@ -196,4 +214,4 @@ function acompanharVisita(vid: string) {
 }
 
 /** Botão "Entrar al grupo alternativo" (20/11/2026): funil de reserva próprio de Jubilados no redirecionador, 2 grupos alternando (#64 e #61). */
-export const LINK_GRUPO_RESERVA = process.env.NEXT_PUBLIC_LINK_GRUPO_RESERVA_JUBILADOS || "https://links.traderdelite.net/jubilados-reserva"
+export const LINK_GRUPO_RESERVA = "https://chat.whatsapp.com/IEHOOq9TdkHBzj7YWo0efP" // 27/11/2026: link direto fixo do grupo reserva

@@ -1,5 +1,7 @@
 "use client"
 
+import { linkGrupoGeral } from "@/lib/lancamento"
+
 import { useEffect, useRef, useState } from "react"
 import { useSearchParams } from "next/navigation"
 import { leadDaSessao } from "@/lib/lead-sessao"
@@ -279,7 +281,7 @@ function GraciasVideoContent() {
 
 
     // Abre WhatsApp INMEDIATAMENTE sin mostrar cartel
-        window.open("https://links.traderdelite.net/geral", "_blank")
+        window.open(linkGrupoGeral(), "_blank")
   }
 
   return (

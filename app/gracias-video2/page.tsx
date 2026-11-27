@@ -1,5 +1,7 @@
 "use client"
 
+import { linkGrupoGeral } from "@/lib/lancamento"
+
 import { useEffect, useRef, useState } from "react"
 import { useSearchParams } from "next/navigation"
 import { leadDaSessao } from "@/lib/lead-sessao"
@@ -212,7 +214,7 @@ const eventId = crypto.randomUUID()
     : capitalQuestion === "si_puedo" || capitalQuestion === "no_pero_podria"
 
   if (!sendQualified) {
-    window.open("https://links.traderdelite.net/geral", "_blank")
+    window.open(linkGrupoGeral(), "_blank")
     return
   }
 
@@ -272,7 +274,7 @@ const eventId = crypto.randomUUID()
 
 
     // Abre WhatsApp INMEDIATAMENTE sin mostrar cartel
-        window.open("https://links.traderdelite.net/geral", "_blank")
+        window.open(linkGrupoGeral(), "_blank")
   }
 
   return (

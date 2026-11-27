@@ -30,12 +30,7 @@ export function novoRedirId(): string {
 }
 
 /** Link do grupo com o código da inscrição (?i=…), ou o link como veio se não houver código. */
+/** 27/11/2026: sem redirecionador — devolve o link do grupo como veio (sem ?i=). */
 export function linkGrupoComId(link: string): string {
-  try {
-    const id = sessionStorage.getItem(CHAVE)
-    if (id && UUID.test(id)) return `${link}${link.includes("?") ? "&" : "?"}i=${id}`
-  } catch {
-    // sem sessionStorage
-  }
   return link
 }
