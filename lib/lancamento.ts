@@ -214,4 +214,4 @@ function acompanharVisita(vid: string) {
 }
 
 /** Botão "Entrar al grupo alternativo" (20/11/2026): funil de reserva próprio de Jubilados no redirecionador, 2 grupos alternando (#64 e #61). */
-export const LINK_GRUPO_RESERVA = "https://chat.whatsapp.com/IEHOOq9TdkHBzj7YWo0efP" // 27/11/2026: link direto fixo do grupo reserva
+export const LINK_GRUPO_RESERVA = "https://chat.whatsapp.com/JkCFhJlYcRsF2rixiv3Nci" // 28/11/2026: link direto fixo do grupo reserva
